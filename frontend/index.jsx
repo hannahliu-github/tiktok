@@ -79,9 +79,9 @@ class Index extends React.Component {
 
                 <h1 id="customHeading">style.css connected</h1>
                 <ListGroup>
-                    {this.state.videoIds.map(videoId => (
+                    {this.state.videoIds.map((videoId, i) => (
                         <ListGroup.Item
-                            key={videoId}
+                            key={videoId + '_' + i.toString()}
                         >
                         <iframe
                             width="100%"
