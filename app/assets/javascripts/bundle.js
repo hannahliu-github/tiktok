@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#customHeading {\n    color: tomato;\n  }", "",{"version":3,"sources":["webpack://style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;EACf","sourcesContent":["#customHeading {\n    color: tomato;\n  }"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container {\n  background-color: black;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  ", "",{"version":3,"sources":["webpack://style.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB;;AAEA;IACI,kBAAkB;IAClB,aAAa;EACf","sourcesContent":[".container {\n  background-color: black;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1145,7 +1145,7 @@ class Index extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
     fetch(searchUrl).then(resp => resp.json()).then(videos => this.setState({
       searchQuery: "",
       videoIds: videos.items.map(video => video.id.videoId)
-    }, () => console.log(videos.items)));
+    }));
   }
 
   render() {
@@ -1164,8 +1164,8 @@ class Index extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
       onClick: this.onSearchClick
     }, "Search"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
       id: "customHeading"
-    }, "style.css connected"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"], null, this.state.videoIds.map(videoId => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      key: videoId
+    }, "style.css connected"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"], null, this.state.videoIds.map((videoId, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+      key: videoId + '_' + i.toString()
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
       width: "100%",
       height: "100%",
