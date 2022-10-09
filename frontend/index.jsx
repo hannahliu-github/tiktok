@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 
 import './style.css';
@@ -41,12 +42,13 @@ class Index extends React.Component {
             <Container className="container">
                 <Row>
                     <Form id="search-bar">
-                        <Row>
-                            <Form.Group
-                                as={Row}
-                            >
+                        <Form.Group
+                            as={Row}
+                        >
+                            <InputGroup>
                                 <Form.Control
                                     type="text"
+                                    placeholder="Music..."
                                     value={this.state.searchQuery}
                                     onChange={this.handleInput('searchQuery')}
                                 >
@@ -56,13 +58,13 @@ class Index extends React.Component {
                                 >
                                     Search
                                 </Button>
-                            </Form.Group>
-                        </Row>
+                            </InputGroup>
+                        </Form.Group>
                     </Form>
 
                 </Row>
 
-                <h1>style.css connected</h1>
+                <h1 id="customHeading">style.css connected</h1>
             </Container>
         );
     }
