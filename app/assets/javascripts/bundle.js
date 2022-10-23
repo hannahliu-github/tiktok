@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container {\n  background-color: black;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  ", "",{"version":3,"sources":["webpack://style.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB;;AAEA;IACI,kBAAkB;IAClB,aAAa;EACf","sourcesContent":[".container {\n  background-color: black;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  "],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#my-container {\n  background-color: black;\n  max-width: 800px;\n  width: 100%;\n}\n\n#search-bar-row {\n  position: sticky;\n  top: 0;\n  width: 100%;\n  z-index: 9999\n}\n\n#search-bar {\n  width: 100%;\n  padding: 10px;\n}\n\n#video-row {\n  width: 100%;\n  display: block;\n  position: relative\n}\n\n#customListGroup {\n  display: flex;\n}\n\n#customListItem {\n  padding: 0px;\n  background-color: black;\n  border-width: 0px;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  ", "",{"version":3,"sources":["webpack://style.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,gBAAgB;EAChB,WAAW;AACb;;AAEA;EACE,gBAAgB;EAChB,MAAM;EACN,WAAW;EACX;AACF;;AAEA;EACE,WAAW;EACX,aAAa;AACf;;AAEA;EACE,WAAW;EACX,cAAc;EACd;AACF;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;AACnB;;AAEA;IACI,kBAAkB;IAClB,aAAa;EACf","sourcesContent":["#my-container {\n  background-color: black;\n  max-width: 800px;\n  width: 100%;\n}\n\n#search-bar-row {\n  position: sticky;\n  top: 0;\n  width: 100%;\n  z-index: 9999\n}\n\n#search-bar {\n  width: 100%;\n  padding: 10px;\n}\n\n#video-row {\n  width: 100%;\n  display: block;\n  position: relative\n}\n\n#customListGroup {\n  display: flex;\n}\n\n#customListItem {\n  padding: 0px;\n  background-color: black;\n  border-width: 0px;\n}\n\niframe{\n    position: relative;\n    height: 100vh;\n  }\n  "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1150,10 +1150,13 @@ class Index extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
 
   render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      className: "container"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      id: "my-container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      id: "search-bar-row"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
       id: "search-bar"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+      className: "xxl-3",
       as: react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__["default"]
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_InputGroup__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
       type: "text",
@@ -1162,17 +1165,21 @@ class Index extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
       onChange: this.handleInput('searchQuery')
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
       onClick: this.onSearchClick
-    }, "Search"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-      id: "customHeading"
-    }, "style.css connected"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"], null, this.state.videoIds.map((videoId, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      key: videoId + '_' + i.toString()
+    }, "Search"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      id: "video-row"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      id: "customListGroup"
+    }, this.state.videoIds.map((videoId, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_bootstrap_ListGroup__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+      key: videoId + '_' + i.toString(),
+      id: "customListItem"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
       width: "100%",
       height: "100%",
-      src: "https://www.youtube.com/embed/" + videoId + "?autoplay=0&frameborder=0",
+      src: "https://www.youtube.com/embed/" + videoId + "?autoplay=0",
+      frameBorder: "0",
       allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
       allowFullScreen: true
-    })))));
+    }))))));
   }
 
 }

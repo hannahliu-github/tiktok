@@ -52,10 +52,14 @@ class Index extends React.Component {
     render() {
 
         return (
-            <Container className="container">
-                <Row>
+            <Container id="my-container"
+            >
+                <Row
+                    id="search-bar-row"
+                >
                     <Form id="search-bar">
                         <Form.Group
+                            className="xxl-3"
                             as={Row}
                         >
                             <InputGroup>
@@ -76,22 +80,28 @@ class Index extends React.Component {
                     </Form>
 
                 </Row>
-
-                <h1 id="customHeading">style.css connected</h1>
-                <ListGroup>
+                <Row
+                    id="video-row"
+                >
+                <ListGroup
+                    id="customListGroup"
+                >
                     {this.state.videoIds.map((videoId, i) => (
                         <ListGroup.Item
                             key={videoId + '_' + i.toString()}
+                            id="customListItem"
                         >
                         <iframe
                             width="100%"
                             height="100%"
-                            src={"https://www.youtube.com/embed/" + videoId + "?autoplay=0&frameborder=0"}
+                            src={"https://www.youtube.com/embed/" + videoId + "?autoplay=0"}
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media;
                                 gyroscope; picture-in-picture" allowFullScreen />
                         </ListGroup.Item>)
                     )}
                 </ListGroup>
+                </Row>
             </Container>
         );
     }

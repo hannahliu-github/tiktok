@@ -1,5 +1,35 @@
-.container {
+#my-container {
   background-color: black;
+  max-width: 800px;
+  width: 100%;
+}
+
+#search-bar-row {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999
+}
+
+#search-bar {
+  width: 100%;
+  padding: 10px;
+}
+
+#video-row {
+  width: 100%;
+  display: block;
+  position: relative
+}
+
+#customListGroup {
+  display: flex;
+}
+
+#customListItem {
+  padding: 0px;
+  background-color: black;
+  border-width: 0px;
 }
 
 iframe{
